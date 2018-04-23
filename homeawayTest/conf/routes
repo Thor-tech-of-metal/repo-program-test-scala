@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes
+# ~~~~
+
+# Swagger - Root Resources Listing
+GET     /swagger.json           controllers.ApiHelpController.getResources
+
+# Get a listing property.
+
+GET     /listings/swagger.json  controllers.ApiHelpController.getResource(path = "/listings")
+POST    /listings               @controllers.ListingPropertyApiController.addListing
+PUT     /listings               @controllers.ListingPropertyApiController.updateListing
+DELETE  /listings/:id           @controllers.ListingPropertyApiController.deleteListing(id)
+GET     /listings/:id           @controllers.ListingPropertyApiController.getListingPropertyById(id)
